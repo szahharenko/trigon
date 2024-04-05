@@ -5,8 +5,8 @@ export enum VIEWS {
 }
 
 export enum CONTENT {
-    WELCOME = 0,
-    ABOUT = 1,
+    NONE = 0,
+    LANDING = 1,
     BAG = 2,
     FAILRESULT = 4,
     REGISTER = 5,
