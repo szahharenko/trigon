@@ -17,12 +17,12 @@ const Header: React.FC = () => {
           <div className="row">
             <div className="col-lg-5 col-md-5">
               <h1>Hästi hoitud saladus</h1>
-              <p>Trigon Dividendifond teenis eelmisel aastal 35.7% tulu, mis on mäekõrguselt üle kõikidest Eesti pensionifondidest. Nelja aastaga on tootlus olnud enam kui 80%. Nüüd on võimalus meie edukatesse fondidesse investeerida kõigil.</p>
+              <p>Trigon Dividendifond teenis eelmisel aastal 35.7% tulu, mis on mäekõrguselt üle kõikidest Eesti pensionifondidest. Nelja aastaga on tootlus olnud enam kui 80%. <strong>Nüüd on võimalus meie edukatesse fondidesse investeerida kõigil.</strong></p>
               <p>
                 <a href="#n" className='bank-button'><img src={lhvButton} alt="" /></a>
                 <a href="#n" className='bank-button'><img src={swedButton} alt="" /></a>
               </p>
-              <p>Fondi eelmiste perioodide tootlus ei garanteeri fondi järgmiste perioodide tootlust. Tutvu fondi prospekti ja põhiteabega trigoncapital.com ja pea nõu asjatundjaga.</p>
+              <p className='small'>Fondi eelmiste perioodide tootlus ei garanteeri fondi järgmiste perioodide tootlust. Tutvu fondi prospekti ja põhiteabega trigoncapital.com ja pea nõu asjatundjaga.</p>
             </div>
             <div className="col-lg-7 col-md-7">
               <div className='relative'>

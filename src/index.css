@@ -12,14 +12,6 @@ html {
   --view-animation-time: 2s;
 }
 
-html, body, input, textarea, select, button {
-  font-family: "Neue Haas Grotesk Display Pro";
-  font-style: normal;
-  font-weight: 500;
-  line-height: 27px;
-  font-size: var(--font-size);
-}
-
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

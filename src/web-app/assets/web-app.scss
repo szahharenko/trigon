@@ -1,6 +1,8 @@
 
 @import '../../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
 @import "../../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css";
+@import './fonts/coconat-demi.css';
+@import './fonts//neue-haas-gisplay.css.css';
 
 html {
   --Trigon-Light: #DDE7DA;
@@ -19,6 +21,14 @@ html, body {
   margin: 0;
   background: white;
   color: var( --Trigon-Dark);
+}
+
+html, body, input, textarea, select, button {
+  font-style: normal;
+  line-height: 27px;
+  font-size: var(--font-size);
+  font-family: 'Neue Haas';
+  font-weight: 300;
 }
 h1,
 h2 {
@@ -227,7 +237,6 @@ h1 {
       margin:0;
       color: var(--Color-Neutral-black, #000);
       text-align: center;
-      font-family: "Neue Haas Grotesk Display Pro";
       font-size: 24px;
       font-style: normal;
       font-weight: 600;

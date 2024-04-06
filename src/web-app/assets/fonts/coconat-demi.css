@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Coconat';
+    src: url('Coconat-Demi.woff2') format('woff2'),
+        url('Coconat-Demi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
