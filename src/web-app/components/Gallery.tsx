@@ -5,21 +5,16 @@ import { Carousel } from 'react-responsive-carousel';
 
 interface Props {
   onChange: (index: number, item: React.ReactNode) => void;
-    //images: Array<{ original: string, thumbnail: string }>
+  title: String;
+  images: Array<{ src: string }>
 }
 
-const Gallery: React.FC<Props> = ({onChange}) => {
+const Gallery: React.FC<Props> = ({onChange, images, title}) => {
   return (
     <Carousel onChange={onChange}>
-      <div>
-          <img src="https://picsum.photos/id/1018/1000/600/" alt="" />
-      </div>
-      <div>
-          <img src="https://picsum.photos/id/1018/1000/600/" alt=""/>
-      </div>
-      <div>
-          <img src="https://picsum.photos/id/1018/1000/600/" alt="" />
-      </div>
+      {
+        images.map((image, index) => <div key={index}><img src={image.src} alt={`${title}-${index}`} /></div>)
+      }
     </Carousel>
   );
 }

@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         <img src={ham} alt=""/>
       </div>
       <div className='head-promo section'>
-        <div className="container">
+        <div className='container'>
           <div className="row">
             <div className="col-lg-5 col-md-5">
               <h1>Hästi hoitud saladus</h1>
@@ -33,7 +33,6 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-
       </div>
     </>
   );

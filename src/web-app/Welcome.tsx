@@ -12,12 +12,10 @@ const Welcome: React.FC = () => {
   return (
     <>
       <Header/>
-      <div className='profits'>
-        <WeDo/>
-        <People/>
-        <Invest/>
-        <Instructions/>
-      </div>
+      <WeDo/>
+      <People/>
+      <Invest/>
+      <Instructions/>
       <Graph/>
       <ContactUs/>
       <Footer/>

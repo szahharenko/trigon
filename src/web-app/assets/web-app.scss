@@ -15,6 +15,9 @@ html {
  }
 }
 
+
+
+
 html, body {
   min-height: 100%;
   padding: 0;
@@ -30,6 +33,13 @@ html, body, input, textarea, select, button {
   font-family: 'Neue Haas';
   font-weight: 300;
 }
+
+@media only screen and (max-width: 767px) {
+  html, body, input, textarea, select, button {
+    line-height: 36px;
+  }
+}
+
 h1,
 h2 {
   font-family: Coconat;
@@ -37,11 +47,16 @@ h2 {
 
 h1 {
   text-align: center;
-  font-size: 56px;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
   text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 40px;
+  }
 }
 
 .bank-button {
@@ -114,10 +129,20 @@ h1 {
     }
   }
   .app-container {
+    overflow: hidden;
     flex: 1;
     position: relative;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .app-container {
+    > .container {
+      padding: 0;
+    }
+  }
+}
+
 
 .loader {
   position: fixed;
@@ -210,6 +235,9 @@ h1 {
 
 @media only screen and (max-width: 767px) {
   .head-promo {
+    h1 {
+      font-size: 64px;
+    }
     .hero {
       margin: 0 auto;
       max-width: 80%;
@@ -240,7 +268,7 @@ h1 {
       font-size: 24px;
       font-style: normal;
       font-weight: 600;
-      line-height: 150%; /* 36px */
+      line-height: 150%;
     }
     p {
       margin: 0 0 calc(var(--base-space) * 0.5) 0;
@@ -266,6 +294,7 @@ h1 {
   padding: var(--base-space);
   margin-bottom: var(--base-space);
   text-align: center;
+  box-sizing: border-box;
   h2 {
     font-size: 64px;
     font-style: normal;
@@ -273,6 +302,17 @@ h1 {
     line-height: 130%;
     margin: 0 ;
   }
+}
+
+@media only screen and (max-width: 767px) {
+  .green-section {
+    padding: calc(var(--base-space)*2);
+    font-size: 24px;
+    h2 {
+      font-size: 40px;
+    }
+  }
+
 }
 
 .footer {
@@ -311,7 +351,7 @@ h1 {
       padding: 0 calc(var(--base-space)/2);
 
       li {
-        display: inline;
+        display: block;
         white-space: nowrap;
       }
     }
@@ -364,13 +404,31 @@ h1 {
   }
 }
 
+
+@media only screen and (max-width: 767px) {
+  .contact-us {
+    .container {
+      padding: 0;
+    }
+    h2 {
+      font-size: 40px;
+    }
+  }
+
+}
+
 .instructions {
+  .container {
+    margin: 0;
+    padding: 0;
+  }
   .tabs {
     text-align: center;
     padding: var(--base-space);
     button {
       display: inline-block;
-      height: 48px;
+      height: var(--base-space);
+      line-height: var(--base-space);
       padding: 8px 24px;
       flex-direction: column;
       justify-content: center;
@@ -391,9 +449,16 @@ h1 {
     div {
       background: rgba(221, 231, 218, 0.20);
       padding: calc(var(--base-space) / 2);
+      border-top: 1px solid var(--Trigon-Light, #DDE7DA);
+      cursor: pointer;
+
+      p {
+        margin: 16px 0 0;
+      }
 
       &:first-child {
         border-radius: 16px 16px 0 0;
+        border-top: none;
       }
       &:last-child {
         border-radius: 0 0 16px 16px;
@@ -402,13 +467,114 @@ h1 {
       &.active {
         color: var(--Trigon-Light, #DDE7DA);
         background: var(--Trigon-Dark, #032705);
+        cursor: default;
       }
       h3 {
-        margin-top: 0;
-        font-size: 32px;
+        margin: 0;
+        font-size: 40;
         font-style: normal;
         font-weight: 400;
-        line-height: 150%; /* 48px */
+        line-height: 150%;
+      }
+    }
+  }
+  .carousel {
+    .carousel-status {
+      display: none;
+    }
+    .thumbs-wrapper {
+      margin: 0;
+    }
+    .thumbs {
+      margin: 15px 0;
+      padding: 0 0 0 calc(var(--base-space) / 2);
+    }
+    .thumb {
+      max-width: 0;
+      max-height: 0;
+      border-color: var(--Trigon-Light, #DDE7DA);
+      padding: 0;
+      border-radius: 50%;
+      transform: scale(1.5);
+      margin-left: 8px;
+    }
+    .control-dots {
+      display: none;
+      visibility: hidden;
+    }
+    &.carousel-slider {
+      overflow: initial;
+      .control-arrow {
+        position: absolute;
+        top: 100%;
+        margin-top: 16px;
+        right: 0;
+        margin-right: 24px;
+        width: 40px;
+        height: 25px;
+        padding: 5px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        border: 1px solid var(--Trigon-Light, #DDE7DA);
+        opacity: 1;
+        &::before {
+          border: none;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: url(./arrow.svg) no-repeat center center;
+          margin: 0;
+        }
+        &.control-prev {
+          left: auto;
+          right: 48px;
+          &::before {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .instructions {
+    .carousel-root,
+    .steps {
+      padding: 0 20px;
+    }
+    .tabs {
+      button {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 0 20px;
+        padding: calc(var(--base-space) * 2);
+        font-size: 20px;
+      }
+    }
+    .steps {
+      div {
+        padding: calc(var(--base-space) * 2);
+      }
+    }
+    .carousel {
+      .control-dots {
+        transform: scale(2);
+        transform-origin: center center;
+      }
+      &.carousel-slider {
+        .control-arrow {
+          transform: scale(1.5);
+          transform-origin: center center;
+          &.control-prev {
+            right: 68px;
+          }
+        }
       }
     }
   }
@@ -417,5 +583,15 @@ h1 {
 .invest {
   img {
     margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .invest {
+    img {
+      display: block;
+      margin: 0 auto 20px;
+      width: 70%;
+    }
   }
 }

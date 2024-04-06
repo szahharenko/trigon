@@ -2,53 +2,124 @@ import React, { useState } from 'react';
 import Gallery from './Gallery';
 import * as Tabs from '@radix-ui/react-tabs';
 
+import lhv1 from '../assets/steps/lhv1.png';
+import lhv2 from '../assets/steps/lhv2.png';
+import lhv3 from '../assets/steps/lhv3.png';
+
+import sw1 from '../assets/steps/sw1.png';
+import sw2 from '../assets/steps/sw2.png';
+import sw3 from '../assets/steps/sw3.png';
+import sw4 from '../assets/steps/sw4.png';
+import sw5 from '../assets/steps/sw5.png';
+import sw6 from '../assets/steps/sw6.png';
+
 const Instructions: React.FC = () => {
   const [slide1, setSlide1] = useState(0);
-  const onChange1 = (index: number, item: React.ReactNode) => {
-    setSlide1(index)
-    console.log(index, item);
+  const [slide2, setSlide2] = useState(0);
+  const [slide3, setSlide3] = useState(0);
+  const onStepClick = (index: number) => {
+    const el = document.querySelectorAll('.thumbs li')[index] as HTMLElement;
+    if(el) el.click();
   }
+  const getSlides = (steps: JSX.Element[], sliderState: number) => {
+    return steps.map((value, index) => <div onClick={() => onStepClick(index)} className={ sliderState === index ? 'active' : ''}>
+        <h3>{stepTitles[index]}</h3>
+        {value}
+      </div>
+    )
+  }
+  const stepTitles = [
+    'Esimene samm',
+    'Teine samm',
+    'Kolmas samm'
+  ]
+  const lhvSteps = [
+    <p>Logi internetipanka, vali ülevalt menüüst <strong>“Kogumine, investeerimine”</strong> ja kliki <strong>“Fondid”</strong></p>,
+    <p>Scrolli fondide loetelu päris lõppu, kliki väiksel nupul <strong>“Fondiorder”</strong> ning sisesta otsingusse <strong>“Trigon Dividendifond”</strong>.</p>,
+    <p>Vali <strong>“Trigon Dividendifond C Osak”</strong> (reinvesteerib kasumi) või <strong>“Trigon Dividendifond D Osak”</strong> (maksab dividende korra aastas) ning osta endale sobivas summas alates 100€</p>
+  ];
+  const swed1Steps = [
+    <p>Sisene internetipanka, vali ülevalt menüüst "Kogumine, investeerimine" ja kliki "Fondid".</p>,
+    <p>Liigu fondide nimekirja lõppu. Kliki väiksel nupul "Fondiorder" ning sisesta otsingusse "Trigon Dividendifond", seejärel vajuta "Otsi". Vali fondiosak, mida soovite osta - "Trigon Dividendifond C osak" (reinvesteerib dividendid) või "Trigon Dividendifond D osak" (maksab dividendid kord aastas välja).</p>,
+    <p>Vali "Tegevused" ning vajuta "Ostan". Sisesta investeeritav summa, vajuta "Kontroll" ning "Kinnitan"</p>
+  ]
+  const swed2Steps = [
+    <p>Sisene internetipanka, vali ülevalt menüüst “Investeerimine, hoiustamine” ja kliki “Fondid”.</p>,
+    <p>Vali “Investeerimisfondide nimekiri” ja liigu fondide nimekirja lõppu. Kliki väiksel nupul “Fondiorder” ning sisesta otsingusse “Trigon Dividendifond". Vali fondiosak, mida soovite osta - "Trigon Dividendifond C osak" (reinvesteerib dividendid) või "Trigon Dividendifond D osak" (maksab dividendid kord aastas välja).</p>,
+    <p>Vali "Tegevused" ning vajuta "Ostan". Sisesta investeeritav summa, vajuta "Kontroll" ning "Kinnitan"</p>
+  ]
 
   return (
-    <div className='container instructions'>
-      <Tabs.Root defaultValue="tab1" orientation="vertical">
-        <Tabs.List aria-label="tabs example" className='tabs'>
-          <Tabs.Trigger value="tab1">LHV era- ja äriklient</Tabs.Trigger>
-          <Tabs.Trigger value="tab2">Swedbank eraklient</Tabs.Trigger>
-          <Tabs.Trigger value="tab3">Swedbank äriklient</Tabs.Trigger>
-        </Tabs.List>
-        <Tabs.Content value="tab1">
-          <div className='container'>
-            <div className="row">
-              <div className="col-md-6">
-                <div className='steps'>
-                  <div className={ slide1 === 0 ? 'active' : ''}>
-                    <h3>Esimene samm</h3>
-                    <p>Logi internetipanka, vali ülevalt menüüst “Kogumine, investeerimine” ja kliki “Fondid”</p>
-                  </div>
-                  <div className={ slide1 === 1 ? 'active' : ''}>
-                    <h3>Teine samm</h3>
-                    <p>Scrolli fondide loetelu päris lõppu, kliki väiksel nupul “Fondiorder” ning sisesta otsingusse “Trigon Dividendifond.</p>
-                  </div>
-                  <div className={ slide1 === 2 ? 'active' : ''}>
-                    <h3>Kolmas samm</h3>
-                    <p>Vali “Trigon Dividendifond C Osak” (reinvesteerib kasumi) või “Trigon Dividendifond D Osak” (maksab dividende korra aastas) ning osta endale sobivas summas alates 100€</p>
+    <div className='container'>
+      <div className='instructions'>
+        <Tabs.Root defaultValue="tab1" orientation="vertical">
+          <Tabs.List aria-label="tabs example" className='tabs'>
+            <Tabs.Trigger onClick={() => setSlide1(0)} value="tab1">LHV era- ja äriklient</Tabs.Trigger>
+            <Tabs.Trigger onClick={() => setSlide2(0)} value="tab2">Swedbank eraklient</Tabs.Trigger>
+            <Tabs.Trigger onClick={() => setSlide3(0)} value="tab3">Swedbank äriklient</Tabs.Trigger>
+          </Tabs.List>
+          <Tabs.Content value="tab1">
+            <div className='container'>
+              <div className="row">
+                <div className="col-md-6">
+                  <div className='steps'>
+                    {getSlides(lhvSteps, slide1)}
                   </div>
                 </div>
-              </div>
-              <div className="col-md-6">
-                <Gallery onChange={onChange1}/>
+                <div className="col-md-6">
+                  <Gallery onChange={setSlide1} title="LHV"  images={[
+                    { src: lhv1 },
+                    { src: lhv2 },
+                    { src: lhv3 }
+                  ]}></Gallery>
+                </div>
               </div>
             </div>
-        </div>
-        </Tabs.Content>
-        <Tabs.Content value="tab2">
-          tab2
-        </Tabs.Content>
-        <Tabs.Content value="tab3">
-          tab3
-        </Tabs.Content>
-      </Tabs.Root>
+          </Tabs.Content>
+          <Tabs.Content value="tab2">
+            <div className='container'>
+              <div className="row">
+                <div className="col-md-6">
+                  <div className='steps'>
+                    {getSlides(swed1Steps, slide2)}
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <Gallery onChange={setSlide2} title="Swed"  images={[
+                  { src: sw1 },
+                  { src: sw2 },
+                  { src: sw3 },
+                  { src: sw4 },
+                  { src: sw5 },
+                  { src: sw6 }
+                  ]}></Gallery>
+                </div>
+              </div>
+            </div>
+          </Tabs.Content>
+          <Tabs.Content value="tab3">
+          <div className='container'>
+              <div className="row">
+                <div className="col-md-6">
+                  <div className='steps'>
+                    {getSlides(swed2Steps, slide3)}
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <Gallery onChange={setSlide3} title="SwedB2B"  images={[
+                    { src: sw1 },
+                    { src: sw2 },
+                    { src: sw3 },
+                    { src: sw4 },
+                    { src: sw5 },
+                    { src: sw6 }
+                  ]}></Gallery>
+                </div>
+              </div>
+            </div>
+          </Tabs.Content>
+        </Tabs.Root>
+      </div>
     </div>
   );
 }
