@@ -1,16 +1,5 @@
-# TodoApp
-
 ## Continuous deployment build
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bf131cd0-ccdc-40bc-9e57-d045a33c254b/deploy-status)](https://keen-johnson-faf51e.netlify.app/) https://keen-johnson-faf51e.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f0f3ae4c-ce14-4b4d-b74c-5d2ad2b39f0e/deploy-status)](https://app.netlify.com/sites/trigon-app/deploys)
 
 ## Notes
 Thanks for checking :)
-
-## Scripts
-
-### `npm start`
-@ http://localhost:3000
-
-### `npm test`
-### `npm run build`
-### `npm run eject`
