@@ -1,19 +1,61 @@
 
 @import '../../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
+@import "../../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css";
 
 html {
-  --Trigon-Middle: #00850E;
-  --Trigon-Dark: #032705;
   --Trigon-Light: #DDE7DA;
+  --Color-Neutral-black: #000;
+  --base-space: 48px;
+}
+@media only screen and (max-width: 767px) {
+  html {
+    --base-space: 16px;
+ }
 }
 
 html, body {
   min-height: 100%;
   padding: 0;
   margin: 0;
-  background: var(--light-green);
-  color: var(--blue);
-  --buble-size: 560px;
+  background: white;
+  color: var( --Trigon-Dark);
+}
+h1,
+h2 {
+  font-family: Coconat;
+}
+
+h1 {
+  text-align: center;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: center;
+}
+
+.bank-button {
+  margin-right: 10px;
+}
+
+.button {
+  display: flex;
+  display: inline-block;
+  box-sizing: content-box;
+  height: var(--base-space);
+  line-height: var(--base-space);
+  padding: 8px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 48px;
+  border: 2px solid var(--Trigon-Middle, #00850E);
+  vertical-align: middle;
+  margin: 0 10px;
+  color: var(--Trigon-Light, #DDE7DA);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .relative {
@@ -121,25 +163,27 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+.section {
+  padding: calc(var(--base-space) * 1.5);
+}
 
 .head-promo {
-  padding: 112px 64px 48px 64px;
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
   background: var(--Trigon-Dark, #032705);
+  color: var(--Trigon-Light, #DDE7DA);
   h1 {
-    color: var(--Trigon-Light, #DDE7DA);
-    font-family: Coconat;
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
     line-height: 90%;
+    text-align: left;
   }
   .hero {
     display: block;
     max-width: 100%;
-    margin-left: 48px;
+    margin-left: var(--base-space);
   }
   .lipper {
     position: absolute;
@@ -154,19 +198,215 @@ html, body {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .head-promo {
+    .hero {
+      margin: 0 auto;
+      max-width: 80%;
+    }
+  }
+}
+
+
 .profits {
   color: var(--Trigon-Dark, #032705);
+  padding: calc(var(--base-space) * 1.5);
+}
 
-  h1 {
+.people {
+  padding: calc(var(--base-space) * 1.5);
+  .person {
     text-align: center;
+    .photo {
+      width: 130px;
+      max-width: 100%;
+      border-radius: 100%;
+      margin: calc(var(--base-space) * 0.5) auto;
+    }
+    h3 {
+      margin:0;
+      color: var(--Color-Neutral-black, #000);
+      text-align: center;
+      font-family: "Neue Haas Grotesk Display Pro";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%; /* 36px */
+    }
+    p {
+      margin: 0 0 calc(var(--base-space) * 0.5) 0;
+      font-size: 18px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .people {
+    .person {
+      .photo {
+        width: 260px;
+      }
+    }
+  }
+}
+
+.green-section {
+  border-radius: 16px;
+  background: var(--Trigon-Light, #DDE7DA);
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
+  text-align: center;
+  h2 {
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin: 0 ;
+  }
+}
+
+.footer {
+  display: flex;
+  padding: calc(var(--base-space) * 1.5);
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  background: var(--Color-Neutral-black, #000);
+  color: var(--Trigon-Light, #DDE7DA);
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0 calc(var(--base-space)/2);
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: var(--Trigon-Light, #DDE7DA);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .footer {
+    text-align: center;
+    ul {
+      padding: 0 calc(var(--base-space)/2);
+
+      li {
+        display: inline;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.graph {
+  padding: calc(var(--base-space) * 3) calc(var(--base-space) * 1.5);
+
+  iframe {
+    width: 100%;
+    height: 750px;
+    border: none;
+  }
+}
+
+.contact-us {
+  display: flex;
+  padding: calc(var(--base-space) * 3) calc(var(--base-space) * 1.5);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px;
+  background: var(--Trigon-Dark, #032705);
+  color: var(--Trigon-Light, #DDE7DA);
+  h2 {
     font-family: Coconat;
     font-size: 56px;
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
-    text-align: center;
+    margin-top: 0;
+  }
+  form {
+    display: flex;
+    padding: 8px 8px 8px 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 48px;
+    background: #FFF;
+    margin-top: var(--base-space);
+    button,
+    input {
+      vertical-align: middle;
+      margin: 0;
+      color: var(--Trigon-Dark, #032705);
+    }
+    input {
+      border: none;
+    }
   }
 }
-.person {
-  text-align: center;
+
+.instructions {
+  .tabs {
+    text-align: center;
+    padding: var(--base-space);
+    button {
+      display: inline-block;
+      height: 48px;
+      padding: 8px 24px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 48px;
+      background: var(--Trigon-Light, #DDE7DA);
+      border: none;
+      margin: 0 calc(var(--base-space)/4);
+      margin-bottom: 8px;
+      &[aria-selected="true"] {
+        background: var(--Trigon-Dark, #032705);
+        color: var(--Trigon-Light, #DDE7DA);
+      }
+    }
+  }
+  .steps {
+    div {
+      background: rgba(221, 231, 218, 0.20);
+      padding: calc(var(--base-space) / 2);
+
+      &:first-child {
+        border-radius: 16px 16px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 16px 16px;
+      }
+
+      &.active {
+        color: var(--Trigon-Light, #DDE7DA);
+        background: var(--Trigon-Dark, #032705);
+      }
+      h3 {
+        margin-top: 0;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 48px */
+      }
+    }
+  }
+}
+
+.invest {
+  img {
+    margin: 10px;
+  }
 }
