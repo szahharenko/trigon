@@ -33,15 +33,16 @@ const Instructions: React.FC = () => {
     'Teine samm',
     'Kolmas samm'
   ]
+
   const lhvSteps = [
-    <p>Logi internetipanka, vali ülevalt menüüst <strong>“Kogumine, investeerimine”</strong> ja kliki <strong>“Fondid”</strong></p>,
-    <p>Scrolli fondide loetelu päris lõppu, kliki väiksel nupul <strong>“Fondiorder”</strong> ning sisesta otsingusse <strong>“Trigon Dividendifond”</strong>.</p>,
-    <p>Vali <strong>“Trigon Dividendifond C Osak”</strong> (reinvesteerib kasumi) või <strong>“Trigon Dividendifond D Osak”</strong> (maksab dividende korra aastas) ning osta endale sobivas summas alates 100€</p>
+    <p>Sisene internetipanka, vali vasakult menüüst “Raha kasvatamine” ja edasi “Ost-müük”.</p>,
+    <p>Kliki nupul “Fondiosakud”, vali konto, millelt soovid investeerida, ning leia rippmenüüst "Trigon Dividendifond C osak” (reinvesteerib dividendid) või “Trigon Dividendifond D osak” (maksab dividendid kord aastas välja).</p>,
+    <p>Sisesta sobiv summa alates 100€ ja kliki “Eelvaade”. Kontrolli tehing ja “Kinnita”.</p>
   ];
   const swed1Steps = [
-    <p>Sisene internetipanka, vali ülevalt menüüst "Kogumine, investeerimine" ja kliki "Fondid".</p>,
-    <p>Liigu fondide nimekirja lõppu. Kliki väiksel nupul "Fondiorder" ning sisesta otsingusse "Trigon Dividendifond", seejärel vajuta "Otsi". Vali fondiosak, mida soovite osta - "Trigon Dividendifond C osak" (reinvesteerib dividendid) või "Trigon Dividendifond D osak" (maksab dividendid kord aastas välja).</p>,
-    <p>Vali "Tegevused" ning vajuta "Ostan". Sisesta investeeritav summa, vajuta "Kontroll" ning "Kinnitan"</p>
+    <p>Sisene internetipanka, vali ülevalt menüüst “Kogumine, investeerimine” ja kliki “Fondid”.</p>,
+    <p>Liigu fondide nimekirja lõppu. Kliki väiksel nupul “Fondiorder” ning sisesta otsingusse “Trigon Dividendifond”, seejärel vajuta “Otsi”. Vali fondiosak, mida soovite osta - “Trigon Dividendifond C osak” (reinvesteerib dividendid) või “Trigon Dividendifond D osak” (maksab dividendid kord aastas välja).</p>,
+    <p>Vali “Tegevused” ning vajuta “Ostan”. Sisesta investeeritav summa, vajuta “Kontroll” ning “Kinnitan”.</p>
   ]
   const swed2Steps = [
     <p>Sisene internetipanka, vali ülevalt menüüst “Investeerimine, hoiustamine” ja kliki “Fondid”.</p>,

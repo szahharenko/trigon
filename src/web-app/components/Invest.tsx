@@ -6,11 +6,10 @@ const Invest: React.FC = () => {
   return (
     <div className='container'>
       <div className='invest green-section'>
-        <h1>Investeeri Trigon Dividendifondi oma internetipangas</h1>
-        <p><strong>Allpool olevas juhises</strong> anname sulle samm-sammu haaval täpselt teada, kuidas meie fond leida.</p>
+        <h1>Investeeri Trigon Dividendifondi internetipangas</h1>
         <p>
-            <img src={lhvButton} alt="" />
-            <img src={swedButton} alt="" />
+          <a href="https://www.lhv.ee/" className='bank-button'><img src={lhvButton} alt="Lhv" /></a>
+          <a href="https://www.swedbank.ee/" className='bank-button'><img src={swedButton} alt="Swed" /></a>
         </p>
       </div>
     </div>

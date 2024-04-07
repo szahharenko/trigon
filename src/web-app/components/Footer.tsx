@@ -19,7 +19,18 @@ const Footer: React.FC = () => {
           <li><a href="https://trigoncapital.com/et/asset-management/investeerimisfilosoofia/">Investeerimisfilosoofia</a></li>
           <li><a href="https://trigoncapital.com/et/uudised-ja-auhinnad/">Uudised</a></li>
         </ul>
-        <p><strong>Telefon</strong>: +372 667 9200  /  <strong>E-mail</strong>: funds@trigoncapital.com</p>
+        <p>
+          <span className="mobile-row"><strong>Telefon</strong>: <a href="tel:003726679200">+372 667 9200</a></span>
+          <span className="mobile-row"><strong>E-mail</strong>: <a href="mailto:funds@trigoncapital.com">funds@trigoncapital.com</a></span>
+        </p>
+        <p>
+          <span className="mobile-row">
+            <a href="#n">Privaatsuspoliitika</a>
+          </span>
+          <span className="mobile-row">
+          <a href="#n"className="mobile-row">Küpsiste kasutamise põhimõtted</a>
+          </span>
+        </p>
     </div>
   );
 }

@@ -12,11 +12,11 @@ html {
 @media only screen and (max-width: 767px) {
   html {
     --base-space: 16px;
- }
+  }
+  .container {
+    padding: 0;
+  }
 }
-
-
-
 
 html, body {
   min-height: 100%;
@@ -63,6 +63,19 @@ h1 {
 .bank-button {
   margin-right: 10px;
 }
+@media only screen and (max-width: 767px) {
+  .bank-button {
+    display: block;
+    margin: 25px auto;
+    background-color: #fff;
+    border-radius: 60px;
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 50%;
+    }
+  }
+}
 
 .button {
   display: flex;
@@ -82,6 +95,27 @@ h1 {
   color: var(--Trigon-Light, #DDE7DA);
   text-decoration: none;
   font-weight: 600;
+  &:hover {
+    border: 2px solid var(--Trigon-Middle, #00850E);
+    background: var(--Trigon-Middle, #00850E);
+    color: var(--Trigon-Light, #DDE7DA);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .button {
+    display: block;
+    width: 100%;
+    margin: 0 auto 20px;
+    box-sizing: border-box;
+    height: var(--base-space);
+    height: 60px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 40px;
+    padding: 0 30px;
+    text-align: center;
+  }
 }
 
 .relative {
@@ -89,46 +123,6 @@ h1 {
 }
 
 .main-app {
-
-  form {
-    .checkbox {
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      input[type=checkbox] {
-        position: absolute;
-        bottom: 100%;
-        right: 100%;
-        margin: 0;
-        width: 0;
-        height: 0;
-        visibility: hidden;
-
-        & + span {
-          display: inline-block;
-          border: solid 2px var(--blue);
-          box-sizing: border-box;
-          width: calc( var(--input-height) / 1.5 );
-          height: calc( var(--input-height) / 1.5 );
-        }
-        &.is-invalid + span {
-          border: solid 2px var(--error);
-        }
-        &:checked + span {
-          background-color: var(--blue);
-        }
-      }
-    }
-    .is-invalid {
-      border-color: var(--error);
-    }
-    .form-submit {
-      margin-top: var(--base-space);
-    }
-  }
   .app-container {
     overflow: hidden;
     flex: 1;
@@ -236,11 +230,14 @@ h1 {
 
 @media only screen and (max-width: 767px) {
   .head-promo {
+    .container {
+      padding: 0;
+    }
     h1 {
       font-size: 64px;
     }
     .hero {
-      margin: 0 auto;
+      margin: 20px auto -50px;
       max-width: 80%;
     }
   }
@@ -257,6 +254,7 @@ h1 {
 }
 @media only screen and (max-width: 767px) {
   .profits {
+    padding-top: 80px;
     h1 {
       font-size: 36px;
     }
@@ -332,26 +330,28 @@ h1 {
   padding: calc(var(--base-space) * 1.5);
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   background: var(--Color-Neutral-black, #000);
   color: var(--Trigon-Light, #DDE7DA);
+  p {
+    margin: 0;
+  }
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
     li {
       margin: 0;
-      padding: 0 calc(var(--base-space)/2);
       display: inline;
-
-      a {
-        text-decoration: none;
-        color: var(--Trigon-Light, #DDE7DA);
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+    }
+  }
+  a {
+    text-decoration: none;
+    color: var(--Trigon-Light, #DDE7DA);
+    padding: 0 calc(var(--base-space)/2);
+    white-space: nowrap;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
@@ -359,6 +359,7 @@ h1 {
 @media only screen and (max-width: 767px) {
   .footer {
     text-align: center;
+    padding: calc(var(--base-space)* 3);
     ul {
       padding: 0 calc(var(--base-space)/2);
 
@@ -366,6 +367,10 @@ h1 {
         display: block;
         white-space: nowrap;
       }
+    }
+    .mobile-row {
+      display: block;
+      text-align: center;
     }
   }
 }
@@ -378,6 +383,19 @@ h1 {
     height: 750px;
     border: none;
   }
+}
+
+@media only screen and (max-width: 767px) {
+  .graph {
+    iframe {
+      height: 600px;
+    }
+  }
+}
+
+.dark-green-bg {
+  background: var(--Trigon-Dark, #032705);
+  color: var(--Trigon-Light, #DDE7DA);
 }
 
 .contact-us {
@@ -397,21 +415,72 @@ h1 {
     margin-top: 0;
   }
   form {
-    display: flex;
-    padding: 8px 8px 8px 16px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 48px;
-    background: #FFF;
-    margin-top: var(--base-space);
-    button,
-    input {
-      vertical-align: middle;
-      margin: 0;
-      color: var(--Trigon-Dark, #032705);
+    .section{
+      display: flex;
+      padding: 8px 8px 8px 16px;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 48px;
+      background: #FFF;
+      margin-top: var(--base-space);
+      button,
+      input {
+        vertical-align: middle;
+        margin: 0;
+        color: var(--Trigon-Dark, #032705);
+      }
+      input {
+        border: none;
+      }
     }
-    input {
-      border: none;
+    .section-check {
+      padding: calc(var(--base-space) / 2) 0;
+      display: block;
+      .checkbox {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input[type=checkbox] {
+          position: absolute;
+          bottom: 100%;
+          right: 100%;
+          margin: 0;
+          width: 0;
+          height: 0;
+          visibility: hidden;
+
+          & + span {
+            line-height: 24px;
+            &::before {
+              content: '';
+              display: inline-block;
+              background: var(--Trigon-Light, #DDE7DA);
+              border: solid 2px var(--Trigon-Light, #DDE7DA);
+              box-sizing: border-box;
+              width: 20px;
+              height: 20px;
+              border-radius: 4px;
+              margin: 0 12px 0 0;
+              vertical-align: middle;
+            }
+          }
+
+          &:checked + span {
+            &::before {
+              background: var(--Trigon-Dark, #032705);
+            }
+          }
+        }
+      }
+      .is-invalid {
+        border-color: var(--error);
+      }
+      .form-submit {
+        margin-top: var(--base-space);
+      }
     }
   }
 }
@@ -419,14 +488,81 @@ h1 {
 
 @media only screen and (max-width: 767px) {
   .contact-us {
+    padding: calc(var(--base-space) * 4) calc(var(--base-space) * 1.5);
     .container {
       padding: 0;
     }
     h2 {
       font-size: 40px;
     }
-  }
+    form {
+      .section{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        border-radius: 0;
+        background: none;
+        margin-top: var(--base-space);
+        button,
+        input {
+          display: block;
+          width: 100%;
+          margin: 0 auto 20px;
+          box-sizing: border-box;
+          color: var(--Trigon-Dark, #032705);
+          height: var(--base-space);
+          height: 60px;
+          line-height: 50px;
+          font-size: 20px;
+          border-radius: 40px;
+          padding: 0 30px;
+        }
+        button {
+          background: none;
+          color: var(--Trigon-Light, #DDE7DA);
+        }
+        input {
+          border: none;
+        }
+      }
+      .section-check {
+        margin-top: 0;
+        .checkbox {
+          input[type=checkbox] {
+            position: absolute;
+            bottom: 100%;
+            right: 100%;
+            margin: 0;
+            width: 0;
+            height: 0;
+            visibility: hidden;
 
+            & + span {
+              line-height: 24px;
+              &::before {
+                content: '';
+                display: inline-block;
+                background: var(--Trigon-Light, #DDE7DA);
+                border: solid 2px var(--Trigon-Light, #DDE7DA);
+                box-sizing: border-box;
+                width: 20px;
+                height: 20px;
+                border-radius: 4px;
+                margin: 0 8px 0 0;
+                vertical-align: middle;
+              }
+            }
+
+            &:checked + span {
+              &::before {
+                background: var(--Trigon-Dark, #032705);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .instructions {
@@ -600,10 +736,9 @@ h1 {
 
 @media only screen and (max-width: 767px) {
   .invest {
+    margin: var(--base-space);
     img {
-      display: block;
-      margin: 0 auto 20px;
-      width: 70%;
+      margin: 0 auto;
     }
   }
 }

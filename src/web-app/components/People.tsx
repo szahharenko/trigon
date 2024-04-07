@@ -10,7 +10,7 @@ const People: React.FC = () => {
   return (
     <div className='container'>
       <div className='people'>
-        <h1>... millesse usuvad ka meie fondijuhid, kes on ise fondi investorid</h1>
+        <h1>...millesse usuvad ka meie fondijuhid, kes on ise fondi investorid.</h1>
 
         <div className="row">
           <div className="person col-md-4">

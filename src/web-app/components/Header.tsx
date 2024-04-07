@@ -17,10 +17,10 @@ const Header: React.FC = () => {
           <div className="row">
             <div className="col-lg-5 col-md-5">
               <h1>Hästi hoitud saladus</h1>
-              <p>Trigon Dividendifond teenis eelmisel aastal 35.7% tulu, mis on mäekõrguselt üle kõikidest Eesti pensionifondidest. Nelja aastaga on tootlus olnud enam kui 80%. <strong>Nüüd on võimalus meie edukatesse fondidesse investeerida kõigil.</strong></p>
+              <p>Trigon Dividendifondi tootlus oli eelmisel aastal 35.7%, mis on mäekõrguselt üle kõigist Eesti pensionifondidest. Nelja aastaga on tootlus olnud enam kui 80%. Nüüd on kõigil võimalus meie fondi edust osa saada.</p>
               <p>
-                <a href="#n" className='bank-button'><img src={lhvButton} alt="" /></a>
-                <a href="#n" className='bank-button'><img src={swedButton} alt="" /></a>
+                <a href="https://www.lhv.ee/" className='bank-button'><img src={lhvButton} alt="Lhv" /></a>
+                <a href="https://www.swedbank.ee/" className='bank-button'><img src={swedButton} alt="Swed" /></a>
               </p>
               <p className='small'>Fondi eelmiste perioodide tootlus ei garanteeri fondi järgmiste perioodide tootlust. Tutvu fondi prospekti ja põhiteabega trigoncapital.com ja pea nõu asjatundjaga.</p>
             </div>
