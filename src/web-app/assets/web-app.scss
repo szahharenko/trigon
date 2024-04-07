@@ -290,9 +290,18 @@ h1 {
 
 @media only screen and (max-width: 767px) {
   .people {
+    .scrollWrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+      margin: 0 calc(var(--base-space) * -1.5);
+    }
+    .row {
+      min-width: 900px;
+      overflow: auto;
+    }
     .person {
       .photo {
-        width: 260px;
+        width: 200px;
       }
     }
   }
@@ -428,6 +437,9 @@ h1 {
         vertical-align: middle;
         margin: 0;
         color: var(--Trigon-Dark, #032705);
+        &.invalid {
+          background-color: #d7abab;
+        }
       }
       input {
         border: none;
@@ -442,23 +454,31 @@ h1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        --bg: var(--Trigon-Light, #DDE7DA);
+
+        &.invalid {
+          --bg: #d7abab;
+        }
 
         input[type=checkbox] {
           position: absolute;
-          bottom: 100%;
-          right: 100%;
+          top: 0%;
+          left: 0%;
           margin: 0;
-          width: 0;
-          height: 0;
-          visibility: hidden;
+          width: 1px;
+          height: 1px;
+          background: none;
+          appearance: none;
+          border: none;
+          opacity: 1 ;
 
           & + span {
             line-height: 24px;
             &::before {
               content: '';
               display: inline-block;
-              background: var(--Trigon-Light, #DDE7DA);
-              border: solid 2px var(--Trigon-Light, #DDE7DA);
+              background: var(--bg);
+              border: solid 2px var(--bg);
               box-sizing: border-box;
               width: 20px;
               height: 20px;
@@ -529,27 +549,10 @@ h1 {
         margin-top: 0;
         .checkbox {
           input[type=checkbox] {
-            position: absolute;
-            bottom: 100%;
-            right: 100%;
-            margin: 0;
-            width: 0;
-            height: 0;
-            visibility: hidden;
-
             & + span {
               line-height: 24px;
               &::before {
-                content: '';
-                display: inline-block;
-                background: var(--Trigon-Light, #DDE7DA);
-                border: solid 2px var(--Trigon-Light, #DDE7DA);
-                box-sizing: border-box;
-                width: 20px;
-                height: 20px;
-                border-radius: 4px;
-                margin: 0 8px 0 0;
-                vertical-align: middle;
+
               }
             }
 
