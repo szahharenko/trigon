@@ -110,7 +110,7 @@ h1 {
     box-sizing: border-box;
     height: var(--base-space);
     height: 60px;
-    line-height: 50px;
+    line-height: 60px;
     font-size: 20px;
     border-radius: 40px;
     padding: 0 30px;
@@ -569,6 +569,11 @@ h1 {
 }
 
 .instructions {
+
+  border-radius: 16px;
+  border: 1px solid var(--Trigon-Light, #DDE7DA);
+  padding: 56px 16px;
+
   .container {
     margin: 0;
     padding: 0;
@@ -694,6 +699,10 @@ h1 {
 
 @media only screen and (max-width: 767px) {
   .instructions {
+    border-radius: 0;
+    border: none;
+    padding: 0;
+
     .carousel-root,
     .steps {
       padding: 0 20px;
