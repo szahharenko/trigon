@@ -12,6 +12,7 @@ import sw3 from '../assets/steps/sw3.png';
 import sw4 from '../assets/steps/sw4.png';
 import sw5 from '../assets/steps/sw5.png';
 import sw6 from '../assets/steps/sw6.png';
+import sw7 from '../assets/steps/sw7.png';
 
 const Instructions: React.FC = () => {
   const [slide1, setSlide1] = useState(0);
@@ -108,7 +109,7 @@ const Instructions: React.FC = () => {
                 </div>
                 <div className="col-md-6">
                   <Gallery onChange={setSlide3} title="SwedB2B"  images={[
-                    { src: sw1 },
+                    { src: sw7 },
                     { src: sw2 },
                     { src: sw3 },
                     { src: sw4 },
