@@ -8,27 +8,32 @@ const ContactUs: React.FC = () => {
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [highLightCheckbox, setHighLightCheckbox] = useState(false);
-
-  function handleInput(event: React.ChangeEvent<HTMLInputElement>) {
-    setEmail(event.target.value);
-    if (email === "" || !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
-      setIsEmailValid(false);
-    } else {
-      setIsEmailValid(true);
-    }
+  function postEmail() {
+    alert(`Email ${email} saved`);
+    setIsSubmitted(true);
   }
-  function handleCheck(event: React.FormEvent<HTMLInputElement>) {
-    event.preventDefault();
+  function handleEmailChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setEmail(event.target.value);
+    const isValid = /^\S+@\S+\.\S+$/.test(email);
+    if (email === "" || !isValid) {
+      setIsEmailValid(false);
+      return;
+    }
+    setIsEmailValid(true);
+  }
+
+  function handleCheck() {
     setChecked(!checked);
   }
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if(checked === false) {
       setHighLightCheckbox(true);
-      return
     }
-    if(isEmailValid === false) return;
-    setIsSubmitted(true);
+    if(isEmailValid === false) {
+      return;
+    }
+    postEmail();
   }
 
   return (
@@ -49,29 +54,22 @@ const ContactUs: React.FC = () => {
                    <p className="success">Aitäh, et tellisite meie uudiskirja! Hindame teie huvi ja ootame põnevusega väärtusliku sisu jagamist teiega.</p>
                    :
                    <>
-                    <p>Sisesta oma e-mail igakuise kuuraporti saamiseks. Jooksvat seisu saad alati jälgida oma internetipangas.</p>
+                    <p>{isEmailValid ? 'isEmailValid' : '!'} Sisesta oma e-mail igakuise kuuraporti saamiseks. Jooksvat seisu saad alati jälgida oma internetipangas.</p>
                     <form onSubmit={handleSubmit}>
-                      <div className="section">
+                      <div className={`section ${isEmailValid || email === '' ? '' : 'invalid'}`}>
                         <input
                           name="email"
-                          className={isEmailValid || email === "" ? "" : "invalid"}
                           type="email" placeholder="Sisesta oma e-mail"
                           value={email}
-                          onChange={handleInput}
+                          onChange={handleEmailChange}
+                          onBlur={handleEmailChange}
                         />
                         <button className="button">SAADAN</button>
                       </div>
-                      <div className="section-check">
-                        <label className={highLightCheckbox ? "invalid checkbox" : "checkbox"}>
-                          <input
-                            checked={checked}
-                            value={checked.toString()}
-                            onChange={handleCheck}
-                            type="checkbox"
-                            name="private"
-                          />
+                      <div className={`section-check ${checked ? 'checked' : ''} ${highLightCheckbox ? 'invalid' : ''}`}>
+                        <label onClick={handleCheck}>
                           <span>
-                            <span className={checked ? 'sq' : 'sq-c'}></span>
+                            <span className='sq'></span>
                              Nõustun Trigoni Privaatsuspoliitikaga *
                           </span>
                         </label>

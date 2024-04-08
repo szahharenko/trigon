@@ -502,81 +502,51 @@ h2 {
   form {
     .section{
       display: flex;
-      padding: 8px 8px 8px 16px;
+      padding: 6px 6px 6px 8px;
       justify-content: space-between;
       align-items: center;
       border-radius: 48px;
+      border: solid 2px var(--Trigon-Light, #DDE7DA);
       background: #FFF;
       margin-top: var(--base-space);
+      &.invalid {
+        background-color: #d7abab;
+      }
       button,
       input {
         vertical-align: middle;
         margin: 0;
         color: var(--Trigon-Dark, #032705);
-        &.invalid {
-          background-color: #d7abab;
-        }
       }
       input {
         border: none;
+        background: transparent;
       }
     }
     .section-check {
       padding: calc(var(--base-space) / 2) 0;
       display: block;
-      .checkbox {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        --bg: var(--Trigon-Light, #DDE7DA);
 
-        &.invalid {
-          --bg: #d7abab;
-        }
-
-        input[type=checkbox] {
-          position: absolute;
-          top: 0%;
-          left: 0%;
-          margin: 0;
-          width: 1px;
-          height: 1px;
-          background: none;
-          appearance: none;
-          border: none;
-          opacity: 1 ;
-
-          & + span {
-            line-height: 24px;
-            .sq-c,
-            .sq {
-              content: '';
-              display: inline-block;
-              background: var(--bg);
-              border: solid 2px var(--bg);
-              box-sizing: border-box;
-              width: 20px;
-              height: 20px;
-              border-radius: 4px;
-              margin: 0 12px 0 0;
-              vertical-align: middle;
-            }
-          }
-
-          &:checked + span {
-            .sq-c {
-              background: var(--Trigon-Dark, #032705);
-            }
-          }
+      .sq {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        margin: 0 12px 0 0;
+        vertical-align: middle;
+        border: 2px solid var(--Trigon-Light, #DDE7DA);
+        background-color: var(--Trigon-Light, #DDE7DA);
+      }
+      &.invalid {
+        .sq {
+          background: #d7abab;
         }
       }
-      .is-invalid {
-        border-color: var(--error);
-      }
-      .form-submit {
-        margin-top: var(--base-space);
+      &.checked {
+        .sq {
+          background: var(--Trigon-Dark, #032705);
+        }
       }
     }
   }
