@@ -8,8 +8,8 @@ const Invest: React.FC = () => {
       <div className='invest green-section'>
         <h1>Investeeri Trigon Dividendifondi internetipangas</h1>
         <p>
-          <a href="https://www.lhv.ee/" className='bank-button'><img src={lhvButton} alt="Lhv" /></a>
-          <a href="https://www.swedbank.ee/" className='bank-button'><img src={swedButton} alt="Swed" /></a>
+          <a target="_blank" rel="noreferrer" href="https://www.lhv.ee/" className='bank-button'><img src={lhvButton} alt="Lhv" /></a>
+          <a target="_blank" rel="noreferrer" href="https://www.swedbank.ee/" className='bank-button'><img src={swedButton} alt="Swed" /></a>
         </p>
       </div>
     </div>
