@@ -23,7 +23,7 @@ const Instructions: React.FC = () => {
     if(el) el.click();
   }
   const getSlides = (steps: JSX.Element[], sliderState: number) => {
-    return steps.map((value, index) => <div onClick={() => onStepClick(index)} className={ sliderState === index ? 'active' : ''}>
+    return steps.map((value, index) => <div key={index} onClick={() => onStepClick(index)} className={ sliderState === index ? 'active' : ''}>
         <h3>{stepTitles[index]}</h3>
         {value}
       </div>

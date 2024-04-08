@@ -64,13 +64,15 @@ const ContactUs: React.FC = () => {
                       <div className="section-check">
                         <label className={highLightCheckbox ? "invalid checkbox" : "checkbox"}>
                           <input
+                            checked={checked}
                             value={checked.toString()}
                             onChange={handleCheck}
                             type="checkbox"
                             name="private"
                           />
                           <span>
-                            Nõustun Trigoni Privaatsuspoliitikaga *
+                            <span className={checked ? 'sq' : 'sq-c'}></span>
+                             Nõustun Trigoni Privaatsuspoliitikaga *
                           </span>
                         </label>
                       </div>

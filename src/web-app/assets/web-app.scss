@@ -31,7 +31,11 @@ html, body, input, textarea, select, button {
   line-height: 27px;
   font-size: var(--font-size);
   font-family: 'Neue Haas';
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.small {
+  font-size: calc(var(--font-size) - 4px);
 }
 
 @media only screen and (max-width: 767px) {
@@ -52,6 +56,10 @@ h1 {
   line-height: 100%;
   text-align: center;
   font-size: 56px;
+  margin: var(--base-space) 0;
+}
+h2 {
+  margin: calc(var(--base-space)/2) 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -83,7 +91,7 @@ h1 {
   box-sizing: content-box;
   height: var(--base-space);
   line-height: var(--base-space);
-  padding: 8px 24px;
+  padding: 0 calc(var(--base-space) / 2);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -203,17 +211,23 @@ h1 {
   gap: 32px;
   background: var(--Trigon-Dark, #032705);
   color: var(--Trigon-Light, #DDE7DA);
+  padding-top: var(--base-space);
   h1 {
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
     line-height: 90%;
     text-align: left;
+    margin: var(--base-space) 0 calc(var(--base-space)/2);
   }
   .hero {
     display: block;
     max-width: 100%;
     margin-left: var(--base-space);
+    margin-bottom: calc(var(--base-space) * -1.5);
+    margin-top: calc(var(--base-space) * -1.5);
+    top: calc(var(--base-space) * 2);
+    position: relative;
   }
   .lipper {
     position: absolute;
@@ -225,6 +239,9 @@ h1 {
     right: 0;
     top: 44%;
     width: 50%;
+  }
+  .small {
+    margin-top: var(--base-space);
   }
 }
 
@@ -262,7 +279,10 @@ h1 {
 }
 
 .people {
-  padding: calc(var(--base-space) * 1.5);
+   padding: calc(var(--base-space) * 1.5);
+   h1 {
+    margin-top: 0;
+   }
   .person {
     text-align: center;
     .photo {
@@ -357,7 +377,7 @@ h1 {
   a {
     text-decoration: none;
     color: var(--Trigon-Light, #DDE7DA);
-    padding: 0 calc(var(--base-space)/2);
+    padding: 0 calc(var(--base-space)/2) 0 5px;
     white-space: nowrap;
     &:hover {
       text-decoration: underline;
@@ -385,7 +405,7 @@ h1 {
 }
 
 .graph {
-  padding: calc(var(--base-space) * 3) calc(var(--base-space) * 1.5);
+  padding: calc(var(--base-space) * 2) calc(var(--base-space) * 1.5) var(--base-space);
 
   iframe {
     width: 100%;
@@ -474,7 +494,8 @@ h1 {
 
           & + span {
             line-height: 24px;
-            &::before {
+            .sq-c,
+            .sq {
               content: '';
               display: inline-block;
               background: var(--bg);
@@ -489,7 +510,7 @@ h1 {
           }
 
           &:checked + span {
-            &::before {
+            .sq-c {
               background: var(--Trigon-Dark, #032705);
             }
           }
@@ -580,7 +601,7 @@ h1 {
   }
   .tabs {
     text-align: center;
-    padding: var(--base-space);
+    padding: 0 0 var(--base-space);
     button {
       display: inline-block;
       height: var(--base-space);
@@ -627,10 +648,11 @@ h1 {
       }
       h3 {
         margin: 0;
-        font-size: 40;
+        font-size: 32px;
+        font-family: Coconat;
         font-style: normal;
         font-weight: 400;
-        line-height: 150%;
+        margin: 10px 0px;
       }
     }
   }
@@ -674,6 +696,8 @@ h1 {
         border-radius: 16px;
         border: 1px solid var(--Trigon-Light, #DDE7DA);
         opacity: 1;
+        display: block;
+
         &::before {
           border: none;
           width: 100%;
@@ -690,6 +714,10 @@ h1 {
           &::before {
             transform: rotate(180deg);
           }
+        }
+        &.control-disabled {
+          border-color: #CCC;
+          background: #CCC;
         }
       }
     }
