@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 interface Props {
   onChange: (index: number, item: React.ReactNode) => void;
   title: String;
-  images: Array<{ src: string }>
+  images: Array<{ src: string, step: number }>
 }
 
 const Gallery: React.FC<Props> = ({onChange, images, title}) => {

@@ -5,7 +5,7 @@ import lhvButton from '../assets/lhv-button.svg';
 const Invest: React.FC = () => {
   return (
     <div className='container'>
-      <div className='invest green-section'>
+      <div className='invest green-section'  id="invest">
         <h1>Investeeri Trigon Dividendifondi internetipangas</h1>
         <p>
           <a target="_blank" rel="noreferrer" href="https://www.lhv.ee/" className='bank-button'><img src={lhvButton} alt="Lhv" /></a>

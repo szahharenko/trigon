@@ -18,12 +18,20 @@ const Instructions: React.FC = () => {
   const [slide1, setSlide1] = useState(0);
   const [slide2, setSlide2] = useState(0);
   const [slide3, setSlide3] = useState(0);
-  const onStepClick = (index: number) => {
-    const el = document.querySelectorAll('.thumbs li')[index] as HTMLElement;
+  const onStepClick = (index: number, order: number[]) => {
+    let x = 0;
+    switch(index) {
+      case 0: x = 0; break;
+      case 1: x = 1; break;
+      case 2: x = 3; break;
+    }
+    const activate = order.length === 3 ? index : x;
+    console.log({index, order, x, activate});
+    const el = document.querySelectorAll('.thumbs li')[activate] as HTMLElement;
     if(el) el.click();
   }
-  const getSlides = (steps: JSX.Element[], sliderState: number) => {
-    return steps.map((value, index) => <div key={index} onClick={() => onStepClick(index)} className={ sliderState === index ? 'active' : ''}>
+  const getSlides = (steps: JSX.Element[], order: number[], sliderState: number) => {
+    return steps.map((value, index) => <div key={index} onClick={() => onStepClick(index, order)} className={ index === order[sliderState] ? 'active' : ''}>
         <h3>{stepTitles[index]}</h3>
         {value}
       </div>
@@ -65,14 +73,14 @@ const Instructions: React.FC = () => {
               <div className="row">
                 <div className="col-md-6">
                   <div className='steps'>
-                    {getSlides(lhvSteps, slide1)}
+                    {getSlides(lhvSteps,[0,1,2],slide1)}
                   </div>
                 </div>
                 <div className="col-md-6">
                   <Gallery onChange={setSlide1} title="LHV"  images={[
-                    { src: lhv1 },
-                    { src: lhv2 },
-                    { src: lhv3 }
+                    { src: lhv1, step: 0},
+                    { src: lhv2, step: 1},
+                    { src: lhv3, step: 2}
                   ]}></Gallery>
                 </div>
               </div>
@@ -83,17 +91,17 @@ const Instructions: React.FC = () => {
               <div className="row">
                 <div className="col-md-6">
                   <div className='steps'>
-                    {getSlides(swed1Steps, slide2)}
+                    {getSlides(swed1Steps,[0,1,1,2,2,2], slide2)}
                   </div>
                 </div>
                 <div className="col-md-6">
                   <Gallery onChange={setSlide2} title="Swed"  images={[
-                  { src: sw1 },
-                  { src: sw2 },
-                  { src: sw3 },
-                  { src: sw4 },
-                  { src: sw5 },
-                  { src: sw6 }
+                  { src: sw1, step: 0 },
+                  { src: sw2, step: 1 },
+                  { src: sw3, step: 1 },
+                  { src: sw4, step: 2 },
+                  { src: sw5, step: 2 },
+                  { src: sw6, step: 2 }
                   ]}></Gallery>
                 </div>
               </div>
@@ -104,17 +112,17 @@ const Instructions: React.FC = () => {
               <div className="row">
                 <div className="col-md-6">
                   <div className='steps'>
-                    {getSlides(swed2Steps, slide3)}
+                    {getSlides(swed2Steps, [0,1,1,2,2,2], slide3)}
                   </div>
                 </div>
                 <div className="col-md-6">
                   <Gallery onChange={setSlide3} title="SwedB2B"  images={[
-                    { src: sw7 },
-                    { src: sw2 },
-                    { src: sw3 },
-                    { src: sw4 },
-                    { src: sw5 },
-                    { src: sw6 }
+                  { src: sw7, step: 0 },
+                  { src: sw2, step: 1 },
+                  { src: sw3, step: 1 },
+                  { src: sw4, step: 2 },
+                  { src: sw5, step: 2 },
+                  { src: sw6, step: 2 }
                   ]}></Gallery>
                 </div>
               </div>

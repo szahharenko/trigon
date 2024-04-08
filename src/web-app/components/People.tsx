@@ -17,19 +17,19 @@ const People: React.FC = () => {
               <img src={person1} className="photo" alt="" />
               <h3>Mihkel Välja</h3>
               <p>Fondijuht, Partner</p>
-              <img src={linkedin} alt="" />
+              <a href='https://www.linkedin.com/in/mihkel-välja-6a30b168' target='_blank' rel="noreferrer"><img src={linkedin} alt="" /></a>
             </div>
             <div className="person col-4">
               <img src={person2} className="photo" alt="" />
               <h3>Jelena Rozenfeld</h3>
               <p>Fondijuht, Partner</p>
-              <img src={linkedin} alt="" />
+              <a href='https://www.linkedin.com/in/jelena-rozenfeld-4931ab7/' target='_blank' rel="noreferrer"><img src={linkedin} alt="" /></a>
             </div>
             <div className="person col-4">
               <img src={person3} className="photo" alt="" />
               <h3>Mehis Raud</h3>
               <p>Fondijuht, Partner</p>
-              <img src={linkedin} alt="" />
+              <a href='https://www.linkedin.com/in/mehis-raud-1b67118a/' target='_blank' rel="noreferrer"><img src={linkedin} alt="" /></a>
             </div>
           </div>
         </div>
@@ -37,5 +37,4 @@ const People: React.FC = () => {
     </div>
   );
 }
-
 export default People;
