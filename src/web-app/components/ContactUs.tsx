@@ -54,7 +54,7 @@ const ContactUs: React.FC = () => {
                    <p className="success">Aitäh, et tellisite meie uudiskirja! Hindame teie huvi ja ootame põnevusega väärtusliku sisu jagamist teiega.</p>
                    :
                    <>
-                    <p>{isEmailValid ? 'isEmailValid' : '!'} Sisesta oma e-mail igakuise kuuraporti saamiseks. Jooksvat seisu saad alati jälgida oma internetipangas.</p>
+                    <p>Sisesta oma e-mail igakuise kuuraporti saamiseks. Jooksvat seisu saad alati jälgida oma internetipangas.</p>
                     <form onSubmit={handleSubmit}>
                       <div className={`section ${isEmailValid || email === '' ? '' : 'invalid'}`}>
                         <input
