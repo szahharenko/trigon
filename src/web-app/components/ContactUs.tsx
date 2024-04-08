@@ -40,7 +40,7 @@ const ContactUs: React.FC = () => {
                 <h2>Hoia end meie tegemistega kursis</h2>
                 <p>
                   Fondi viimane kuuraport:
-                  <a href="#h" className="button">VAATA SIIT</a>
+                  <a href="https://trigoncapital.com/fund-sheet/" className="button">VAATA SIIT</a>
                 </p>
               </div>
               <div className="col-md-6">
