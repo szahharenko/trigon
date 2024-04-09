@@ -209,7 +209,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--Trigon-Dark);
+  background: #032705eb;
   color: var(--Trigon-Light);
   z-index: 10000;
   padding: var(--base-space);
@@ -231,9 +231,9 @@ h2 {
       text-align: center;
       position: sticky;
       bottom: 0;
-      background: var(--Trigon-Dark);
+      background: #032705eb;
       padding: calc(var(--base-space)/2) 0;
-      box-shadow: 0 -50px 68px var(--Trigon-Dark);
+      box-shadow: 0 -50px 68px #032705eb;
       margin-top: 40px;
     }
   }
