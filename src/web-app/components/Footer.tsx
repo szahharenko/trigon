@@ -26,7 +26,7 @@ const Footer: React.FC<Props> = ({setShowPrivacy}) => {
           </p>
           <p>
           <span className="mobile-row">
-            <a onClick={() => setShowPrivacy(true)}>Privaatsuspoliitika</a>
+            <a onClick={() => setShowPrivacy(true)} href="#n">Privaatsuspoliitika</a>
           </span>
               <span className="mobile-row">
           <a target="_blank" rel="noreferrer" href="#n" className="mobile-row">Küpsiste kasutamise põhimõtted</a>

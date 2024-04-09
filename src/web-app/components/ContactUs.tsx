@@ -71,7 +71,7 @@ const ContactUs: React.FC<Props> = ({setShowPrivacy}) => {
                         <label onClick={handleCheck}>
                           <span>
                             <span className='sq'></span>
-                             Nõustun Trigoni <a onClick={() => setShowPrivacy(true)}>Privaatsuspoliitikaga</a> *
+                             Nõustun Trigoni <a onClick={() => setShowPrivacy(true)}  href="#n">Privaatsuspoliitikaga</a> *
                           </span>
                         </label>
                       </div>
