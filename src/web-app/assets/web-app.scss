@@ -510,7 +510,6 @@ h2 {
       justify-content: space-between;
       align-items: center;
       border-radius: 48px;
-      border: solid 2px var(--Trigon-Light, #DDE7DA);
       background: #FFF;
       margin-top: var(--base-space);
       &.invalid {
@@ -574,6 +573,8 @@ h2 {
         border-radius: 0;
         background: none;
         margin-top: var(--base-space);
+        border: solid 2px var(--Trigon-Light, #DDE7DA);
+
         button,
         input {
           display: block;
