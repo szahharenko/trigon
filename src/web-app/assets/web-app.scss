@@ -123,6 +123,7 @@ h2 {
   color: var(--Trigon-Light, #DDE7DA);
   text-decoration: none;
   font-weight: 600;
+  text-decoration: none !important;
   &:hover {
     border: 2px solid var(--Trigon-Middle, #00850E);
     background: var(--Trigon-Middle, #00850E);
@@ -258,7 +259,17 @@ h2 {
     }
   }
 }
-
+@media only screen and (max-width: 767px) {
+  .disclaimer {
+    > div {
+      .actions {
+        padding-bottom: var(--base-space);
+        display: flex;
+        gap: 12px;
+      }
+    }
+  }
+}
 .head-bar {
   background: var(--Trigon-Middle, #00850E);
   display: flex;
