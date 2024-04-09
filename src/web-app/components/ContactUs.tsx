@@ -9,7 +9,7 @@ const ContactUs: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [highLightCheckbox, setHighLightCheckbox] = useState(false);
   function postEmail() {
-    alert(`Email ${email} saved`);
+    //alert(`Email ${email} saved`);
     setIsSubmitted(true);
   }
   function handleEmailChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -51,7 +51,7 @@ const ContactUs: React.FC = () => {
               <div className="col-md-6">
                 {
                   isSubmitted ?
-                   <p className="success">Aitäh, et tellisite meie uudiskirja! Hindame teie huvi ja ootame põnevusega väärtusliku sisu jagamist teiega.</p>
+                   <p className="success">Sinu meiliaadress jõudis kenasti kohale, aitäh!</p>
                    :
                    <>
                     <p>Sisesta oma e-mail igakuise kuuraporti saamiseks. Jooksvat seisu saad alati jälgida oma internetipangas.</p>
