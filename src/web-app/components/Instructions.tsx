@@ -44,19 +44,19 @@ const Instructions: React.FC = () => {
   ]
 
   const lhvSteps = [
-    <p>Sisene internetipanka, vali vasakult menüüst “Raha kasvatamine” ja edasi “Ost-müük”.</p>,
-    <p>Kliki nupul “Fondiosakud”, vali konto, millelt soovid investeerida, ning leia rippmenüüst "Trigon Dividendifond C osak” (reinvesteerib dividendid) või “Trigon Dividendifond D osak” (maksab dividendid kord aastas välja).</p>,
-    <p>Sisesta sobiv summa alates 100€ ja kliki “Eelvaade”. Kontrolli tehing ja “Kinnita”.</p>
+    <p>Sisene internetipanka, vali vasakult menüüst <strong>“Raha kasvatamine”</strong> ja edasi <strong>“Ost-müük”</strong>.</p>,
+    <p>Kliki nupul <strong>“Fondiosakud”</strong>, vali konto, millelt soovid investeerida, ning leia rippmenüüst <strong>“Trigon Dividendifond C osak”</strong> (reinvesteerib dividendid) või <strong>“Trigon Dividendifond D osak”</strong> (maksab dividendid kord aastas välja).</p>,
+    <p>Sisesta sobiv summa alates 100€ ja kliki <strong>“Eelvaade”</strong>. Kontrolli tehing ja <strong>“Kinnita”</strong>.</p>
   ];
   const swed1Steps = [
-    <p>Sisene internetipanka, vali ülevalt menüüst “Kogumine, investeerimine” ja kliki “Fondid”.</p>,
-    <p>Liigu fondide nimekirja lõppu. Kliki väiksel nupul “Fondiorder” ning sisesta otsingusse “Trigon Dividendifond”, seejärel vajuta “Otsi”. Vali fondiosak, mida soovite osta - “Trigon Dividendifond C osak” (reinvesteerib dividendid) või “Trigon Dividendifond D osak” (maksab dividendid kord aastas välja).</p>,
-    <p>Vali “Tegevused” ning vajuta “Ostan”. Sisesta investeeritav summa, vajuta “Kontroll” ning “Kinnitan”.</p>
+    <p>Sisene internetipanka, vali ülevalt menüüst <strong>“Kogumine, investeerimine”</strong> ja kliki <strong>“Fondid”</strong>.</p>,
+    <p>Liigu fondide nimekirja lõppu. Kliki väiksel nupul <strong>“Fondiorder”</strong> ning sisesta otsingusse <strong>“Trigon Dividendifond”</strong>, seejärel vajuta <strong>“Otsi”</strong>. Vali fondiosak, mida soovite osta - <strong>“Trigon Dividendifond C osak”</strong> (reinvesteerib dividendid) või <strong>“Trigon Dividendifond D osak”</strong> (maksab dividendid kord aastas välja).</p>,
+    <p>Vali <strong>“Tegevused”</strong> ning vajuta <strong>“Ostan”</strong>. Sisesta investeeritav summa, vajuta <strong>“Kontroll”</strong> ning <strong>“Kinnitan”</strong>.</p>
   ]
   const swed2Steps = [
-    <p>Sisene internetipanka, vali ülevalt menüüst “Investeerimine, hoiustamine” ja kliki “Fondid”.</p>,
-    <p>Vali “Investeerimisfondide nimekiri” ja liigu fondide nimekirja lõppu. Kliki väiksel nupul “Fondiorder” ning sisesta otsingusse “Trigon Dividendifond". Vali fondiosak, mida soovite osta - "Trigon Dividendifond C osak" (reinvesteerib dividendid) või "Trigon Dividendifond D osak" (maksab dividendid kord aastas välja).</p>,
-    <p>Vali "Tegevused" ning vajuta "Ostan". Sisesta investeeritav summa, vajuta "Kontroll" ning "Kinnitan"</p>
+    <p>Sisene internetipanka, vali ülevalt menüüst <strong>“Investeerimine, hoiustamine”</strong> ja kliki <strong>“Fondid”</strong>.</p>,
+    <p>Vali <strong>“Investeerimisfondide nimekiri”</strong> ja liigu fondide nimekirja lõppu. Kliki väiksel nupul <strong>“Fondiorder”</strong> ning sisesta otsingusse <strong>“Trigon Dividendifond"</strong>. Vali fondiosak, mida soovite osta - <strong>"Trigon Dividendifond C osak"</strong> (reinvesteerib dividendid) või <strong>"Trigon Dividendifond D osak"</strong> (maksab dividendid kord aastas välja).</p>,
+    <p>Vali <strong>"Tegevused"</strong> ning vajuta <strong>"Ostan"</strong>. Sisesta investeeritav summa, vajuta <strong>"Kontroll"</strong> ning <strong>"Kinnitan"</strong></p>
   ]
 
   return (
