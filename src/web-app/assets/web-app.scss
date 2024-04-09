@@ -4,6 +4,10 @@
 @import './fonts/coconat-demi.css';
 @import './fonts//neue-haas-gisplay.css.css';
 
+:root {
+  --app-height: 100%;
+}
+
 html {
   --Trigon-Light: #DDE7DA;
   --Color-Neutral-black: #000;
@@ -155,7 +159,7 @@ h2 {
   &.no-scroll {
     position: relative;
     overflow: hidden;
-    max-height: 100vh;
+    max-height: var(--app-height);
   }
   .app-container {
     overflow: hidden;
@@ -242,7 +246,7 @@ h2 {
     max-width: 700px;
     margin: 0 auto;
     width: calc(100% - var(--base-space)*2);
-    max-height: calc(100vh - var(--base-space)*2);
+    max-height: calc(var(--app-height) - var(--base-space)*2);
     padding: var(--base-space) var(--base-space) 0;
     box-sizing: border-box;
     background-color: #FFF;
