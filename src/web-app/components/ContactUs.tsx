@@ -19,8 +19,10 @@ const ContactUs: React.FC<Props> = ({setShowPrivacy}) => {
     try {
       const response = await fetch('/data/', requestOptions);
       const data = await response.json();
-      if(data.OK) {
+      if(data.status === 'success') {
         setIsSubmitted(true);
+      } else {
+        alert('Midagi läks valesti, proovi uuesti');
       }
     } catch (error) {
       alert('Midagi läks valesti, proovi uuesti');
