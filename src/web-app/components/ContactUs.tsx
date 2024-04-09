@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-
-const ContactUs: React.FC = () => {
-
+interface Props {
+  setShowPrivacy: (show: boolean) => void;
+}
+const ContactUs: React.FC<Props> = ({setShowPrivacy}) => {
   const [email, setEmail] = useState("");
   const [checked, setChecked] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
@@ -70,7 +71,7 @@ const ContactUs: React.FC = () => {
                         <label onClick={handleCheck}>
                           <span>
                             <span className='sq'></span>
-                             Nõustun Trigoni Privaatsuspoliitikaga *
+                             Nõustun Trigoni <a onClick={() => setShowPrivacy(true)}>Privaatsuspoliitikaga</a> *
                           </span>
                         </label>
                       </div>

@@ -8,7 +8,10 @@ import Instructions from './components/Instructions';
 import Header from './components/Header';
 import Invest from './components/Invest';
 
-const Welcome: React.FC = () => {
+interface Props {
+  setShowPrivacy: (show: boolean) => void;
+}
+const Welcome: React.FC<Props> = ({setShowPrivacy}) => {
   return (
     <>
       <Header/>
@@ -17,8 +20,8 @@ const Welcome: React.FC = () => {
       <Invest/>
       <Instructions/>
       <Graph/>
-      <ContactUs/>
-      <Footer/>
+      <ContactUs setShowPrivacy={setShowPrivacy}/>
+      <Footer setShowPrivacy={setShowPrivacy}/>
     </>
   );
 }

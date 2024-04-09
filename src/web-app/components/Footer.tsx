@@ -1,7 +1,10 @@
 import React from "react";
 import ham from "../assets/header-assets-management.svg";
 
-const Footer: React.FC = () => {
+interface Props {
+  setShowPrivacy: (show: boolean) => void;
+}
+const Footer: React.FC<Props> = ({setShowPrivacy}) => {
   return (
       <div className="footer">
           <img src={ham} alt=""/>
@@ -23,7 +26,7 @@ const Footer: React.FC = () => {
           </p>
           <p>
           <span className="mobile-row">
-            <a target="_blank" rel="noreferrer" href="#n">Privaatsuspoliitika</a>
+            <a onClick={() => setShowPrivacy(true)}>Privaatsuspoliitika</a>
           </span>
               <span className="mobile-row">
           <a target="_blank" rel="noreferrer" href="#n" className="mobile-row">Küpsiste kasutamise põhimõtted</a>

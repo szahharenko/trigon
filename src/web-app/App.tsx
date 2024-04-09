@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './assets/web-app.scss';
 import Welcome from './Welcome';
 import CookieConsent from 'react-cookie-consent';
 import { useCookies } from 'react-cookie';
+import Privacy from './components/Privacy';
 
 const App: React.FC = () => {
   const [cookies, setCookie] = useCookies(['disclaimer']);
-  console.log(cookies);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  function togglePrivacy(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+    e.preventDefault();
+    setShowPrivacy(!showPrivacy);
+  }
   return (
     <>
-      <div className={`${cookies.disclaimer ? '' : 'no-scroll'} main-app`}>
+      <div className={`${cookies.disclaimer ? '' : 'no-scroll'} ${!showPrivacy ? '' : 'no-scroll'} main-app`}>
         <div className='app-container'>
-          <Welcome></Welcome>
+          <Welcome setShowPrivacy={setShowPrivacy}></Welcome>
         </div>
       </div>
       <CookieConsent
@@ -30,7 +35,7 @@ const App: React.FC = () => {
         }}
         expires={150}
       >
-        Sellel veebilehel kasutatakse küpsiseid. Veebilehe kasutamist jätkates nõustute sellega. Loe ka ettevõtte <a href="#n">Privaatsuspoliitikat</a>.
+        Sellel veebilehel kasutatakse küpsiseid. Veebilehe kasutamist jätkates nõustute sellega. Loe ka ettevõtte <a onClick={togglePrivacy}>Privaatsuspoliitikat</a>.
       </CookieConsent>
       {
         cookies.disclaimer !== true ?
@@ -62,6 +67,9 @@ const App: React.FC = () => {
           </div>
           :
           null
+      }
+      {
+        showPrivacy ? <Privacy onClose={() => setShowPrivacy(false)}></Privacy> : null
       }
     </>
   );
