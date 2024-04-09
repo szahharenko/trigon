@@ -214,7 +214,7 @@ h2 {
   z-index: 10000;
   padding: var(--base-space);
 
-  button {
+  .button {
     color: #000;
   }
 
@@ -226,15 +226,17 @@ h2 {
     max-height: calc(100vh - var(--base-space)*2);
     padding: var(--base-space) var(--base-space) 0;
     box-sizing: border-box;
+    background-color: #FFF;
+    color: #000;
+
 
     .actions {
       text-align: center;
       position: sticky;
       bottom: 0;
-      background: #032705eb;
       padding: calc(var(--base-space)/2) 0;
-      box-shadow: 0 -50px 68px #032705eb;
       margin-top: 40px;
+      background-color: #FFF;
     }
   }
 }
