@@ -9,9 +9,22 @@ const ContactUs: React.FC<Props> = ({setShowPrivacy}) => {
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [highLightCheckbox, setHighLightCheckbox] = useState(false);
-  function postEmail() {
-    //alert(`Email ${email} saved`);
-    setIsSubmitted(true);
+  async function  postEmail() {
+    const formData= {email, consent: true}
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    };
+    try {
+      const response = await fetch('/data/', requestOptions);
+      const data = await response.json();
+      if(data.OK) {
+        setIsSubmitted(true);
+      }
+    } catch (error) {
+      alert('Midagi läks valesti, proovi uuesti');
+    }
   }
   function handleEmailChange(event: React.ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value);
