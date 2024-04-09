@@ -55,8 +55,8 @@ const App: React.FC = () => {
                   <li>Kogu sellel veebisaidil olev sisu on kaitstud autoriõigusega. Kui AS Trigon Asset Management pole selleks nõusolekut andnud, ei tohi sellel veebisaidil või selle kaudu juurdepääsetavat sisu, materjale ega pilte ühelgi viisil kopeerida, reprodutseerida, uuesti avaldada, üles laadida, postitada, edastada ega levitada.</li>
                 </ol>
                 <div className="actions">
-                  <button className='button' onClick={() => setCookie('disclaimer', 'true')}>Ok</button>
-                  <a className='button' href="https://trigoncapital.com/">Loobu</a>
+                  <button className='button' onClick={() => setCookie('disclaimer', 'true')}>Nõustun</button>
+                  <a className='button' href="https://trigoncapital.com/">Keeldun</a>
                 </div>
               </div>
           </div>
