@@ -619,7 +619,12 @@ h2 {
         background: none;
         margin-top: var(--base-space);
         border-color: transparent;
-
+        &.invalid {
+          background-color: transparent;
+          input {
+            background-color: #d7abab;
+          }
+        }
         button,
         input {
           display: block;
@@ -641,6 +646,7 @@ h2 {
         input {
           border: none;
           background-color: #fff;
+          border: solid 2px #fff;
         }
       }
       .section-check {
@@ -813,6 +819,7 @@ h2 {
       padding: 0 20px;
     }
     .tabs {
+      padding: 0 var(--base-space);
       button {
         display: block;
         width: 100%;
