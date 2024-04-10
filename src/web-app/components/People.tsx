@@ -13,19 +13,19 @@ const People: React.FC = () => {
         <h1>...millesse usuvad ka meie fondijuhid, kes on ise fondi investorid.</h1>
         <div className="scrollWrapper">
           <div className="row">
-            <div className="person col-4">
+            <div className="person col-sm-6 col-4">
               <img src={person1} className="photo" alt="" />
               <h3>Mihkel Välja</h3>
               <p>Fondijuht, Partner</p>
               <a href='https://www.linkedin.com/in/mihkel-välja-6a30b168' target='_blank' rel="noreferrer"><img src={linkedin} alt="" /></a>
             </div>
-            <div className="person col-4">
+            <div className="person col-sm-6 col-4">
               <img src={person2} className="photo" alt="" />
               <h3>Jelena Rozenfeld</h3>
               <p>Fondijuht, Partner</p>
               <a href='https://www.linkedin.com/in/jelena-rozenfeld-4931ab7/' target='_blank' rel="noreferrer"><img src={linkedin} alt="" /></a>
             </div>
-            <div className="person col-4">
+            <div className="person col-sm-6 col-4">
               <img src={person3} className="photo" alt="" />
               <h3>Mehis Raud</h3>
               <p>Fondijuht, Partner</p>

@@ -35,6 +35,9 @@ const Header: React.FC = () => {
                 <a onClick={scrollToInvest} href="#n" className='bank-button'><img src={lhvButton} alt="Lhv" /></a>
                 <a onClick={scrollToInvest} href="#n" className='bank-button'><img src={swedButton} alt="Swed" /></a>
               </p>
+              <p className='small'>
+                * Eelmise aasta tootlus on perioodi 01.01.2023-31.12.2023 kohta. Nelja aasta tootlus perioodi 28.02.2020 - 29.02.2024 kohta. Fondi eelmiste perioodide tootlus ei garanteeri fondi järgmiste perioodide tootlust. Tutvu fondi prospekti ja põhiteabega <a href="https://trigoncapital.com/" target='_blank' rel="noreferrer">trigoncapital.com</a>  ja pea nõu asjatundjaga.
+              </p>
             </div>
             <div className="col-lg-7 col-md-7 mobile-hidden">
               <div className='relative'>

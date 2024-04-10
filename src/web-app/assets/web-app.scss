@@ -302,6 +302,10 @@ h2 {
   background: var(--Trigon-Dark, #032705);
   color: var(--Trigon-Light, #DDE7DA);
   padding-top: var(--base-space);
+  a {
+    color: var(--Trigon-Light, #DDE7DA);
+    text-decoration: underline;
+  }
   h1 {
     font-size: 96px;
     font-style: normal;
@@ -332,7 +336,7 @@ h2 {
     width: 50%;
   }
   .small {
-    margin-top: var(--base-space);
+    margin-top: 0;
   }
 }
 
@@ -344,16 +348,23 @@ h2 {
     }
     .lipper {
       transform: translateX(-5%);
+      z-index: 2;
+      max-width: 35%;
+      top: 174px;
     }
     .hero-graph {
-      top: 120px;
+      top: 0;
+      position: relative;
+      width: 85%;
+      margin: -100px 0 0 auto;
+      display: block;
     }
     .container {
       padding: 0;
     }
     .hero {
       margin: 0;
-      max-width: 70%;
+      max-width: 40%;
       top: 0;
     }
   }
@@ -414,6 +425,7 @@ h2 {
       overflow-x: auto;
       white-space: nowrap;
       margin: 0 calc(var(--base-space) * -1.5);
+      padding: 0 28%;
     }
     .row {
       min-width: 900px;
@@ -427,7 +439,7 @@ h2 {
   }
 }
 .row {
-  &.flex 
+  &.flex
   > div {
     display: flex;
 
@@ -596,7 +608,7 @@ h2 {
         border-radius: 4px;
         margin: 0 12px 0 0;
         vertical-align: middle;
-        border: 2px solid var(--Trigon-Light, #DDE7DA);
+        border: 2px solid #000;
         background-color: var(--Trigon-Light, #DDE7DA);
       }
       &.invalid {
@@ -606,7 +618,8 @@ h2 {
       }
       &.checked {
         .sq {
-          background: var(--Trigon-Dark, #032705);
+          background: #000 url(./check.svg) no-repeat center center;
+          background-size: 80%;
         }
       }
     }
