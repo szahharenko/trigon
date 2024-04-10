@@ -48,6 +48,8 @@ html, body, input, textarea, select, button {
 
 .small {
   font-size: calc(var(--font-size) - 4px);
+  margin-top: 30px;
+  line-height: 1.4;
 }
 
 @media only screen and (max-width: 767px) {
