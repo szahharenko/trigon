@@ -61,7 +61,7 @@ const Instructions: React.FC = () => {
 
   return (
     <div className='container'>
-      <div className='instructions'>
+      <div className='instructions' id='invest'>
         <Tabs.Root defaultValue="tab1" orientation="vertical">
           <Tabs.List aria-label="tabs example" className='tabs'>
             <Tabs.Trigger onClick={() => setSlide1(0)} value="tab1">LHV era- ja äriklient</Tabs.Trigger>

@@ -426,14 +426,23 @@ h2 {
     }
   }
 }
+.row {
+  &.flex 
+  > div {
+    display: flex;
 
+  }
+}
 .green-section {
   border-radius: 16px;
   background: var(--Trigon-Light, #DDE7DA);
   padding: var(--base-space);
-  margin-bottom: var(--base-space);
+  margin-bottom: calc(var(--base-space)/2);
   text-align: center;
   box-sizing: border-box;
+  align-self: stretch;
+  width: 100%;
+
   h2 {
     font-size: 64px;
     font-style: normal;
