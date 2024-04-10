@@ -35,7 +35,7 @@ const App: React.FC = () => {
         }}
         expires={150}
       >
-        Sellel veebilehel kasutatakse küpsiseid. Veebilehe kasutamist jätkates nõustute sellega. Loe ka ettevõtte <a  href="#n" onClick={togglePrivacy}>Privaatsuspoliitikat</a>.
+        Siin veebilehel kasutatakse küpsiseid. Veebilehe kasutamist jätkates nõustute sellega ning veebilehe kasutustingimuste ja <a  href="#n" onClick={togglePrivacy}>privaatsusteatega</a>.
       </CookieConsent>
       {
         cookies.disclaimer !== true ?
