@@ -26,6 +26,7 @@ const Header: React.FC = () => {
             <div className="col-lg-5 col-md-5">
               <h1>Hästi hoitud saladus</h1>
               <p><strong>Trigon Dividendifondi</strong> tootlus oli eelmisel aastal 35.7%, mis on mäekõrguselt üle kõigist Eesti pensionifondidest. Nelja aastaga on tootlus olnud enam kui 80%*. <strong>Nüüd on kõigil võimalus meie fondi edust osa saada.</strong></p>
+              <p>Kliki oma <strong>panga logol</strong> ja <strong>näe juhendit</strong>, kuidas internetipangas meie fondi investeerida.</p>
               <div className='hero-mobile relative mobile-only'>
                 <img src={heroM} className='hero' alt="" />
                 <img src={lipper} alt="" className='lipper' />
