@@ -14,7 +14,7 @@ const WeDo: React.FC = () => {
           <div className="col">
             <div className='green-section' style={{marginBottom:0}}>
               Haldame klientide varasid
-              <h2>900+ miljoni euro väärtuses</h2>
+              <h2>1+ miljardi euro väärtuses</h2>
             </div>
           </div>
         </div>
